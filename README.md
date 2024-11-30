@@ -23,6 +23,11 @@ table {
 }
 ```
 
+With the above setup, make sure that at least one column is not fixed width.
+Otherwise the table will ignore all width specifications. If all columns need to
+be fixed, then you must switch to `table-layout: auto` (see
+[MDN docs](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout))
+
 For a column to truncate its content and show ellipsis, we need to set the
 following CSS properties:
 
