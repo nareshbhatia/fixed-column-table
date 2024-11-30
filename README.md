@@ -1,14 +1,41 @@
-# React Starter
+# Fixed Column Table
 
-A minimal template to get started with React.
-
-**Tech Stack**
-
-1. Framework: React 18 + Vite + React Router
-2. Styling: Plain CSS
-3. Linting: Code Shaper ESLint configuration
+A sample app showing how to style a table with fixed width columns. Also, how to
+truncate cell contents to the width of its column. In the screenshot below, all
+columns except the title column are fixed width. The title column takes up the
+remaining width of the container. Also its contents are truncated to the width
+of the column, showing ellipsis.
 
 ![Screenshot](assets/screenshot.png)
+
+## Styling
+
+For the table to honor fixed column widths, we need to set the following CSS
+properties:
+
+```css
+table {
+  /* required to fix column widths */
+  table-layout: fixed;
+
+  /* required to fix the table's width */
+  width: 100%;
+}
+```
+
+For a column to truncate its content and show ellipsis, we need to set the
+following CSS properties:
+
+```css
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
+You can see these styles in action in the
+[MovieList styles](./src/components/MovieList/MovieList.css).
 
 ## Development Build
 
